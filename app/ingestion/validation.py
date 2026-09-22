@@ -1,5 +1,4 @@
 import pandas as pd
-
 # Validation function
 # Checks loaded dataset against expected healthy baseline and returns structured dictionary as the response.
 def validate_dataframe(df:pd.DataFrame,run_metadata:dict) -> dict:
@@ -9,6 +8,8 @@ def validate_dataframe(df:pd.DataFrame,run_metadata:dict) -> dict:
     expected_samples = 0
     actual_samples = len(df)
     issues = []
+    run_id = run_metadata["run_id"]
+    channel = run_metadata["channel"]
 
     # No. of samples expected:
     measurement_type = run_metadata["measurement_type"]
@@ -48,7 +49,9 @@ def validate_dataframe(df:pd.DataFrame,run_metadata:dict) -> dict:
         valid = True
 
     # Response dictionary
-    response = {"valid":valid,
+    response = {"run_id":run_id,
+                "channel":channel,
+                "valid":valid,
                 "status":status,
                 "expected_samples":expected_samples,
                 "actual_samples":actual_samples,

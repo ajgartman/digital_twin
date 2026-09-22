@@ -1,6 +1,5 @@
 import uvicorn
 from fastapi import FastAPI
-from app.tests import test_loader
 app = FastAPI()
 
 @app.get("/")
