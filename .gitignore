@@ -1,0 +1,2 @@
+# --- Ignoring core config files  ---
+app/core/*.py

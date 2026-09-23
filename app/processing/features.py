@@ -39,6 +39,7 @@ def extract_features_dataframe(input_dataframe:pd.DataFrame,metadata:dict) -> pd
     for column in input_dataframe.columns[1:]:
         series_features : dict = extract_features_series(input_dataframe[column])
         series_features["window_id"] = column
+        series_features["measurement_id"] = int(column)//5 if metadata["measurement_type"] == "Vibration" else column
         series_features["measurement_type"] = metadata["measurement_type"]
         series_features["device"] = metadata["device"]
         series_features["speed"] = metadata["speed"]
@@ -50,9 +51,25 @@ def extract_features_dataframe(input_dataframe:pd.DataFrame,metadata:dict) -> pd
 
     features_vector_df = pd.DataFrame(features_vector)
 
-    # Reordering the file
+    # Reordering the file columns
     features_vector_df = features_vector_df[
-        ["run_id","window_id","channel", "measurement_type", "device", "speed", "condition",
+        ["run_id","window_id","measurement_id","channel", "measurement_type", "device", "speed", "condition",
          "mean", "rms", "std", "peak"]]
+
+    if metadata["measurement_type"] == "Vibration":
+        features_vector_df = features_vector_df.groupby(["channel","measurement_id"]).agg({
+                                                        "mean": "mean",
+                                                        "rms": "mean",
+                                                        "std": "mean",
+                                                        "peak": "mean",
+
+                                                        "speed": "first",     # using 'first' to take the first value
+                                                        "condition": "first",
+                                                        "run_id": "first",
+                                                        "device": "first",
+                                                        "measurement_type": "first"
+                                                        })
+        # Resetting the index
+        features_vector_df = features_vector_df.reset_index()
 
     return features_vector_df

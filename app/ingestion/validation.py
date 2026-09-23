@@ -10,6 +10,8 @@ def validate_dataframe(df:pd.DataFrame,run_metadata:dict) -> dict:
     issues = []
     run_id = run_metadata["run_id"]
     channel = run_metadata["channel"]
+    run_type = run_metadata["measurement_type"]
+    severity = run_metadata["severity"]
 
     # No. of samples expected:
     measurement_type = run_metadata["measurement_type"]
@@ -50,6 +52,8 @@ def validate_dataframe(df:pd.DataFrame,run_metadata:dict) -> dict:
 
     # Response dictionary
     response = {"run_id":run_id,
+                "type":run_type,
+                "severity":severity,
                 "channel":channel,
                 "valid":valid,
                 "status":status,

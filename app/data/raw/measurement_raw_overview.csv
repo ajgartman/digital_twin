@@ -1,0 +1,76 @@
+﻿run_id,setup,failure_desc,severity,speed_sp,speed_rpm,pressure,flow
+M2_100_healthy_1_0,motor 2,Healthy 1,0,100,1480,1.5,120
+M2_75_healthy_1_0,motor 2,Healthy 1,0,75,1110,0.8,100
+M2_50_healthy_1_0,motor 2,Healthy 1,0,50,740,0.2,65
+M2_100_impeller_1,motor 2,Impeller,1,100,1480,1.4,120
+M2_75_impeller_1,motor 2,Impeller,1,75,1110,0.8,100
+M2_50_impeller_1,motor 2,Impeller,1,50,740,0.2,55
+M2_100_impeller_2,motor 2,Impeller,2,100,1480,1.5,130
+M2_75_impeller_2,motor 2 ,Impeller,2,75,1110,0.7,90
+M2_50_impeller_2,motor 2,Impeller,2,50,740,0.2,45
+M2_100_impeller_3,motor 2,Impeller,3,100,1480,1.4,135
+M2_75_impeller_3,motor 2,Impeller,3,75,1110,0.8,105
+M2_50_impeller_3,motor 2 ,Impeller,3,50,740,0.1,70
+M2_100_bearing_bpfo_1,motor 2,Bearing BPFO,1,100,1480,1.4,140
+M2_75_bearing_bpfo_1,motor 2,Bearing BPFO,1,75,1110,0.8,105
+M2_50_bearing_bpfo_1,motor 2,Bearing BPFO,1,50,740,0.1,75
+M2_100_bearing_bpfo_2,motor 2,Bearing BPFO,2,100,1480,1.4,140
+M2_75_bearing_bpfo_2,motor 2,Bearing BPFO,2,75,1110,0.7,105
+M2_50_bearing_bpfo_2,motor 2,Bearing BPFO,2,50,740,0.1,70
+M2_100_bearing_bpfo_3,motor 2,Bearing BPFO,3,100,1480,1.4,140
+M2_75_bearing_bpfo_3,motor 2,Bearing BPFO,3,75,1110,0.7,105
+M2_50_bearing_bpfo_3,motor 2,Bearing BPFO,3,50,740,0.1,70
+M2_100_bearing_bpfi_1,motor 2,Bearing BPFI,1,100,1480,1.4,140
+M2_75_bearing_bpfi_1,motor 2,Bearing BPFI,1,75,1110,0.8,105
+M2_50_bearing_bpfi_1,motor 2,Bearing BPFI,1,50,740,0.1,75
+M2_100_bearing_bpfi_2,motor 2,Bearing BPFI,2,100,1480,1.4,140
+M2_75_bearing_bpfi_2,motor 2,Bearing BPFI,2,75,1110,0.8,105
+M2_50_bearing_bpfi_2,motor 2,Bearing BPFI,2,50,740,0.1,70
+M2_100_bearing_bpfi_3,motor 2,Bearing BPFI,3,100,1480,1.4,140
+M2_75_bearing_bpfi_3,motor 2,Bearing BPFI,3,75,1110,0.7,105
+M2_50_bearing_bpfi_3,motor 2,Bearing BPFI,3,50,740,0.1,70
+M2_100_bearing_contaminated_0,motor 2,Bearing contaminated,0,100,1480,1.4,140
+M2_75_bearing_contaminated_0,motor 2,Bearing contaminated,0,75,1110,0.7,105
+M2_50_bearing_contaminated_0,motor 2,Bearing contaminated,0,50,740,0.1,70
+M2_100_bearing_bsf_0,motor 2,Bearing BSF,0,100,1480,1.4,145
+M2_75_bearing_bsf_0,motor 2 ,Bearing BSF,0,75,1110,0.7,105
+M2_50_bearing_bsf_0,motor 2,Bearing BSF,0,50,740,0.1,70
+M2_100_soft_foot_1,motor 2,Soft foot,1,100,1480,1.4,140
+M2_75_soft_foot_1,motor 2,Soft foot,1,75,1110,0.7,105
+M2_50_soft_foot_1,motor 2,Soft foot,1,50,740,0.1,70
+M2_100_soft_foot_2,motor 2,Soft foot,2,100,1480,1.4,140
+M2_75_soft_foot_2,motor 2,Soft foot,2,75,1110,0.7,105
+M2_50_soft_foot_2,motor 2,Soft foot,2,50,740,0.1,70
+M2_100_loose_foot_motor_0,motor 2,Loose foot motor,0,100,1480,1.4,140
+M2_75_loose_foot_motor_0,motor 2,Loose foot motor,0,75,1110,0.7,105
+M2_50_loose_foot_motor_0,motor 2,Loose foot motor,0,50,740,0.1,70
+M2_100_loose_foot_pump_0,motor 2,Loose foot pump,0,100,1480,1.4,140
+M2_75_loose_foot_pump_0,motor 2,Loose foot pump,0,75,1110,0.7,105
+M2_50_loose_foot_pump_0,motor 2,Loose foot pump,0,50,740,0.1,70
+M2_100_broken_rotor_bar_0,motor 2,Broken rotor bar,0,100,1480,1.4,140
+M2_75_broken_rotor_bar_0,motor 2,Broken rotor bar,0,75,1110,0.7,105
+M2_50_broken_rotor_bar_0,motor 2,Broken rotor bar,0,50,740,0.1,70
+M2_100_new_motor_0,motor 2,New motor,0,100,1480,1.4,140
+M2_75_new_motor_0,motor 2,New motor,0,75,1110,0.7,105
+M2_50_new_motor_0,motor 2,New motor,0,50,740,0.1,70
+M2_100_stator_short_1,motor 2,Stator short,1,100,1480,1.4,140
+M2_75_stator_short_1,motor 2,Stator short,1,75,1110,0.7,105
+M2_50_stator_short_1,motor 2,Stator short,1,50,740,0.1,70
+M2_100_stator_short_2,motor 2,Stator short,2,100,1480,1.4,140
+M2_75_stator_short_2,motor 2,Stator short,2,75,1110,0.7,105
+M2_50_stator_short_2,motor 2,Stator short,2,50,740,0.1,70
+M2_100_healthy_2_0,motor 2,Healthy 2,0,100,1480,1.4,140
+M2_75_healthy_2_0,motor 2,Healthy 2,0,75,1110,0.7,105
+M2_50_healthy_2_0,motor 2,Healthy 2,0,50,740,0.1,70
+M2_100_healthy_3_0,motor 2,Healthy 3,0,100,1480,1.4,135
+M2_75_healthy_3_0,motor 2,Healthy 3,0,75,1110,0.7,100
+M2_50_healthy_3_0,motor 2,Healthy 3,0,50,740,0.1,70
+M2_100_bearing_pump_1,motor 2,Bearing pump,1,100,1480,1.4,140
+M2_75_bearing_pump_1,motor 2,Bearing pump,1,75,1110,0.7,105
+M2_50_bearing_pump_1,motor 2,Bearing pump,1,50,740,0.1,70
+M2_100_bearing_pump_2,motor 2,Bearing pump,2,100,1480,1.4,140
+M2_75_bearing_pump_2,motor 2,Bearing pump,2,75,1110,0.7,105
+M2_50_bearing_pump_2,motor 2,Bearing pump,2,50,740,0.1,70
+M2_100_bearing_pump_3,motor 2,Bearing pump,3,100,1480,1.4,140
+M2_75_bearing_pump_3,motor 2,Bearing pump,3,75,1110,0.7,105
+M2_50_bearing_pump_3,motor 2,Bearing pump,3,50,740,0.1,70
