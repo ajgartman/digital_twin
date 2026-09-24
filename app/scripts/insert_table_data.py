@@ -1,5 +1,5 @@
 from app.database.connection import SessionLocal
-from app.models.measurement_entities.process import ProcessMeasurement
+from app.models.measurement_entities.orm_models import ProcessMeasurement
 import pandas as pd
 
 # Opening worker session to the DB

@@ -15,16 +15,22 @@ def parser(path:str) -> dict:
     device = path_list[1]
     speed = int(path_list[2])
     condition = path_list[3]
-    condition_no_severity = path_list[3][:-1]
+    condition_no_severity = path_list[3][:-2]
     if "healthy" in condition:
         severity = "0"
+        condition_no_severity = path_list[3]
     elif condition[-1] not in sequence_of_numbers:
         severity = "0"
+        condition_no_severity = path_list[3]
     else:
         severity = condition[-1]
 
-    channel = file_name.split(".")[0][-3:]
-    run_id = path_list[1][0]+ device[-1]+ "_" + path_list[2] + "_" + path_list[3].replace(" ","_") + "_" + severity
+    channel = int(file_name.split(".")[0][-3:].strip("ch"))
+    capital_letter = path_list[1][0]
+    motor_number = device[-1]
+    speed_setpoint = path_list[2]
+
+    run_id = capital_letter + motor_number + "_" + speed_setpoint + "_" + condition_no_severity.replace(" ","_") + "_" + severity
 
     run_metadata = {"run_id":run_id,
                     "measurement_type":measurement_type,

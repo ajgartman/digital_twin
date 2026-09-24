@@ -5,24 +5,36 @@ from app.ingestion.validation import validate_dataframe
 from app.ingestion.metadata_parser import parser
 from app.processing.features import extract_features_dataframe
 from app.core.config import Config
+from app.database.repository import get_process_measurement, check_existing_data
+
 # Processing pipeline v1.
 
 def process_csv(path:str) -> pd.DataFrame:
 
-    #1. Parse the data
+    #. Parse the data
     metadata = parser(path)
 
-    #2. Load CSV
+    #. Check for assigned Process Measurement data
+    process_measurement_object = get_process_measurement(metadata["run_id"])
+    if not process_measurement_object:
+        raise ValueError("Given CSV does not have process measurement file assigned!")
+
+    #. Check for existing processed sensor data
+    existing_data = check_existing_data(process_measurement_object,metadata)
+    if existing_data:
+        raise ValueError("Processed data already exists for this file!")
+
+    #. Load CSV
     df = load_csv(path)
 
-    #3. Validate DataFrame
+    #. Validate DataFrame
     validation = validate_dataframe(df,metadata)
     print(validation)
 
     if not validation["valid"]:
         raise ValueError("Invalid dataframe!")
 
-    #4. Extracting features
+    #. Extracting features
     features = extract_features_dataframe(df,metadata)
 
     return features
@@ -41,8 +53,3 @@ def process_folder(folder_path:str) -> pd.DataFrame:
     combined = pd.concat(feature_folder,ignore_index=True)
 
     return combined
-
-
-
-
-
