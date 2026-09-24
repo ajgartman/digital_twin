@@ -46,6 +46,7 @@ def extract_features_dataframe(input_dataframe:pd.DataFrame,metadata:dict) -> pd
         series_features["condition"] = metadata["condition"]
         series_features["channel"] = metadata["channel"]
         series_features["run_id"] = metadata["run_id"]
+        series_features["severity"] = metadata["severity"]
 
         features_vector.append(series_features)
 
@@ -53,7 +54,7 @@ def extract_features_dataframe(input_dataframe:pd.DataFrame,metadata:dict) -> pd
 
     # Reordering the file columns
     features_vector_df = features_vector_df[
-        ["run_id","window_id","measurement_id","channel", "measurement_type", "device", "speed", "condition",
+        ["run_id","window_id","measurement_id","channel", "measurement_type", "device", "speed", "condition", "severity",
          "mean", "rms", "std", "peak"]]
 
     if metadata["measurement_type"] == "Vibration":
@@ -67,7 +68,8 @@ def extract_features_dataframe(input_dataframe:pd.DataFrame,metadata:dict) -> pd
                                                         "condition": "first",
                                                         "run_id": "first",
                                                         "device": "first",
-                                                        "measurement_type": "first"
+                                                        "measurement_type": "first",
+                                                        "severity":"first",
                                                         })
         # Resetting the index
         features_vector_df = features_vector_df.reset_index()

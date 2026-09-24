@@ -12,7 +12,7 @@ target_folders = ["healthy 1","healthy 2", "healthy 3"]
 target_folder = ["healthy 1"]
 
 
-healthy_path = "Electric/Motor-2/50/"
+healthy_path = "Vibration/Motor-2/50/"
 
 healthy_data_combined = []
 
@@ -27,5 +27,6 @@ healthy_50 = pd.concat(healthy_data_combined, ignore_index=True)
 print(healthy_50.shape)
 print(healthy_50.head(30))
 print(healthy_50.columns)
+
 
 
