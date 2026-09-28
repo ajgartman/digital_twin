@@ -6,10 +6,5 @@ session = SessionLocal()
 
 process_measurement_object = session.get(ProcessMeasurement,3)
 
-print(process_measurement_object.electric_measurements[0].mean)
-print(process_measurement_object.run_id)
+print(process_measurement_object.electric_measurements)
 
-
-electric_measurement_object = session.get(ElectricMeasurement,1)
-
-print(electric_measurement_object.process_measurement)

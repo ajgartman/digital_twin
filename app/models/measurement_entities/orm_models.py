@@ -9,7 +9,6 @@ class VibrationMeasurement(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     process_measurement_id: Mapped[int] = mapped_column(ForeignKey("process_measurements.id"))
     process_measurement: Mapped["ProcessMeasurement"] = relationship(back_populates="vibration_measurements")
-    measurement_type: Mapped[str] = mapped_column()
     channel: Mapped[int] = mapped_column()
     measurement_id: Mapped[int] = mapped_column()
     mean: Mapped[float] = mapped_column()
@@ -19,7 +18,7 @@ class VibrationMeasurement(Base):
 
     def __repr__(self):
         return (f"Vibration Measurement run_id={self.id},"
-                f" Measurement Type='{self.measurement_type}',"
+                f" Measurement ID='{self.measurement_id}',"
                 f" Channel = {self.channel}")
 
 
@@ -29,7 +28,6 @@ class ElectricMeasurement(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     process_measurement_id: Mapped[int] = mapped_column(ForeignKey("process_measurements.id"))
     process_measurement: Mapped["ProcessMeasurement"] = relationship(back_populates="electric_measurements")
-    measurement_type: Mapped[str] = mapped_column()
     channel: Mapped[int] = mapped_column()
     window_id: Mapped[int] = mapped_column()
     measurement_id: Mapped[int] = mapped_column()
@@ -41,7 +39,7 @@ class ElectricMeasurement(Base):
     def __repr__(self):
         return (f"Electrical Measurement ID = {self.id},"
                 f"Process Measurement ID = {self.process_measurement_id}, "
-                f"Measurement Type = {self.measurement_type}, "
+                f"Measurement ID = {self.measurement_id}, "
                 f"Channel = {self.channel}")
 
 
