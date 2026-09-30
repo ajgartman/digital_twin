@@ -3,3 +3,4 @@ fastapi
 pandas
 sqlalchemy
 psycopg2-binary
+alembic

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import ForeignKey
+from sqlalchemy import ForeignKey, UniqueConstraint
 from app.database.base import Base
 
 
@@ -63,5 +63,53 @@ class ProcessMeasurement(Base):
     def __repr__(self):
         return (f"Process Measurement run ID(run_id={self.run_id},"
                 f" Setup='{self.setup}',"
-                f" Severity={self.severity})"
+                f" Severity={self.severity}),"
                 f" Condition description= = {self.condition_desc}")
+
+
+class HealthyElectricBaseline(Base):
+    __tablename__ = "healthy_electric_baseline"
+
+    # Adding unique constraint - process measurement + channel + feature has to be unique!
+    __table_args__ = (UniqueConstraint("process_measurement_id",
+                                       "channel",
+                                       "feature",
+                                       name="uq_electric_baseline_run_channel_feature"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    process_measurement_id: Mapped[int] = mapped_column(ForeignKey("process_measurements.id"))
+    process_measurement: Mapped["ProcessMeasurement"] = relationship(back_populates="healthy_electric_baselines")
+    channel: Mapped[int] = mapped_column()
+    feature: Mapped[str] = mapped_column()
+    mean: Mapped[float] = mapped_column()
+    std: Mapped[float] = mapped_column()
+    feature_max: Mapped[float] = mapped_column()
+    feature_min: Mapped[float] = mapped_column()
+
+
+    def __repr__(self):
+        return f"Healthy electric baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"
+
+
+class HealthyVibrationBaseline(Base):
+    __tablename__ = "healthy_vibration_baseline"
+
+    # Adding unique constraint - process measurement + channel + feature has to be unique!
+    __table_args__ = (UniqueConstraint("process_measurement_id",
+                                       "channel",
+                                       "feature",
+                                       name="uq_vibration_baseline_run_channel_feature"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    process_measurement_id: Mapped[int] = mapped_column(ForeignKey("process_measurements.id"))
+    process_measurement: Mapped["ProcessMeasurement"] = relationship(back_populates="healthy_vibration_baselines")
+    channel: Mapped[int] = mapped_column()
+    feature: Mapped[str] = mapped_column()
+    mean: Mapped[float] = mapped_column()
+    std: Mapped[float] = mapped_column()
+    feature_max: Mapped[float] = mapped_column()
+    feature_min: Mapped[float] = mapped_column()
+
+
+    def __repr__(self):
+        return f"Healthy vibration baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"

@@ -11,7 +11,6 @@ def extract_features_series(input_series) -> dict:
     # Calculating mean
     for row in input_series:
         total_sum += row
-
     mean_output = total_sum/n
 
     for row in input_series:
