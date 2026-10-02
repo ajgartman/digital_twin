@@ -1,7 +1,11 @@
 from app.processing.pipeline import pipeline
 
-# Algorithm. End to end pipeline to process and store features.
-# 1. Parse, 2.Validate, 3.Load, 4.Extract features, 5. Load the data into database
+# Description:
+# Stage 1 Pipeline. Its task is to fetch raw CSV files, process them and save in the database.
+# Raw data ingestion and feature extraction
+
+
+# 1. Parse, 2.Validate, 3.Load, 4.Extract features, 5. Load the processed data into the database.
 
 # Select target folders
 target_folders = ["impeller 1","impeller 2", "impeller 3","loose foot motor",

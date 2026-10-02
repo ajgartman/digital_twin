@@ -60,6 +60,11 @@ class ProcessMeasurement(Base):
                                                                                 cascade="all, delete-orphan")
     electric_measurements: Mapped[list["ElectricMeasurement"]] = relationship(back_populates="process_measurement",
                                                                                 cascade="all, delete-orphan")
+    healthy_electric_baselines: Mapped[list["HealthyElectricBaseline"]] = relationship(back_populates="process_measurement",
+                                                                                       cascade="all, delete-orphan")
+    healthy_vibration_baselines: Mapped[list["HealthyVibrationBaseline"]] = relationship(back_populates="process_measurement",
+                                                                                         cascade="all, delete-orphan")
+
     def __repr__(self):
         return (f"Process Measurement run ID(run_id={self.run_id},"
                 f" Setup='{self.setup}',"
@@ -88,7 +93,8 @@ class HealthyElectricBaseline(Base):
 
 
     def __repr__(self):
-        return f"Healthy electric baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"
+        return (f"Healthy electric baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"
+                f"Run ID: {self.id}")
 
 
 class HealthyVibrationBaseline(Base):
@@ -112,4 +118,32 @@ class HealthyVibrationBaseline(Base):
 
 
     def __repr__(self):
-        return f"Healthy vibration baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"
+        return (f"Healthy vibration baseline for: Process Measurement run ID(run_id={self.process_measurement_id})"
+                f"Run ID: {self.id}")
+
+
+class HealthySetpointBaseline(Base):
+    __tablename__ = "healthy_setpoint_baseline"
+
+    __table_args__ = (
+        UniqueConstraint(
+            "speed_sp",
+            "measurement_type",
+            "channel",
+            "feature",
+            name="uq_healthy_baseline_condition",
+        ),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    speed_sp: Mapped[int] = mapped_column()
+    measurement_type: Mapped[str] = mapped_column()
+    channel: Mapped[int] = mapped_column()
+    feature: Mapped[str] = mapped_column()
+    mean: Mapped[float] = mapped_column()
+    std: Mapped[float] = mapped_column()
+    feature_min: Mapped[float] = mapped_column()
+    feature_max: Mapped[float] = mapped_column()
+
+    def __repr__(self):
+        return f"Healthy setpoint baseline: {self.speed_sp} for Measurement Type: {self.measurement_type})"
