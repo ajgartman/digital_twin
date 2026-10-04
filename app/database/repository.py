@@ -1,7 +1,7 @@
 from sqlalchemy.exc import SQLAlchemyError
 from app.database.connection import SessionLocal
 from sqlalchemy import select
-from app.models.measurement_entities.orm_models import ProcessMeasurement, ElectricMeasurement,VibrationMeasurement
+from app.models.db_models.orm_models import ProcessMeasurement, ElectricMeasurement,VibrationMeasurement
 import pandas as pd
 
 # Operations performed on the stored data.

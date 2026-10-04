@@ -3,7 +3,7 @@ import os
 from app.ingestion.loader import load_csv
 from app.ingestion.validation import validate_dataframe
 from app.ingestion.metadata_parser import parser
-from app.processing.features import extract_features_dataframe
+from app.processing.feature_extraction_pipeline import extract_features_dataframe
 from app.core.config import Config
 from app.database.repository import get_process_measurement, check_existing_data, save_processed_data
 

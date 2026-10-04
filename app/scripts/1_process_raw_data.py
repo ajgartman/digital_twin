@@ -1,4 +1,4 @@
-from app.processing.pipeline import pipeline
+from app.processing.raw_data_pipeline import pipeline
 
 # Description:
 # Stage 1 Pipeline. Its task is to fetch raw CSV files, process them and save in the database.

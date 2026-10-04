@@ -1,11 +1,11 @@
 import pandas as pd
 from sqlalchemy import select
 from app.database.connection import SessionLocal
-from app.models.measurement_entities.orm_models import (ProcessMeasurement,
-                                                        ElectricMeasurement,
-                                                        VibrationMeasurement,
-                                                        HealthyElectricBaseline,
-                                                        HealthyVibrationBaseline)
+from app.models.db_models.orm_models import (ProcessMeasurement,
+                                             ElectricMeasurement,
+                                             VibrationMeasurement,
+                                             HealthyElectricBaseline,
+                                             HealthyVibrationBaseline)
 from sqlalchemy.exc import SQLAlchemyError
 
 
@@ -94,7 +94,6 @@ def process_validation(measurement_type,measurement_id) -> bool:
     else:
         measurement_entity = HealthyVibrationBaseline
 
-
     with SessionLocal() as session:
         # Obtaining process measurement id
         process_id = select(ProcessMeasurement.id).where(ProcessMeasurement.run_id == measurement_id)
@@ -123,5 +122,3 @@ def healthy_baseline_pipeline(measurement_ids:list[str]):
             process_single_run(measurement_type,measurement_run_id)
             print("Measurement run processed!")
 
-def healthy_runs(speed_sp:int):
-    pass

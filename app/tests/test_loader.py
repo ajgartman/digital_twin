@@ -1,4 +1,4 @@
-from app.processing.pipeline import pipeline
+from app.processing.raw_data_pipeline import pipeline
 
 # Algorithm.
 # 1. Parse, 2.Load, 3. Extract features, 4. Load the data into database
@@ -11,4 +11,4 @@ target_folders = ["impeller 1","impeller 2", "impeller 3","loose foot motor", "l
 
 file_path = "Vibration/Motor-2/100/"
 
-pipeline(file_path,target_folders)
+# pipeline(file_path,target_folders)
