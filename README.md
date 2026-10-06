@@ -38,3 +38,10 @@ The system processes electrical and vibration measurements, extracts signal feat
 | 29-Sep | — | 0h |
 | 30-Sep | Worked on healthy baseline, added Alembic migrations | 2h 30m |
 | 01-Oct | Finished healthy baseline, populated tables, started creating healthy setpoint entities | 2h |
+| 02-Oct | Set up Git lab, added readme, created healthy setpoint baselines in the db | 2h |
+| 03-Oct | Created healthy process tables and scripts and process performance model | 3h 15m |
+| 04-Oct | Renamed tables, started validation, reorganized the project directory, first take at report writing, abstract and skeleton | 4h 15m |
+| 05-Oct | Finished report skeleton, programming validation feature | 3h |
+
+
+
