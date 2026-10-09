@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sqlalchemy import select
-from app.models.db_models.orm_models import ProcessMeasurement
+from app.models.database.orm_models import ProcessMeasurement
 
 # File to test db connection and query some data
 from app.database.connection import SessionLocal

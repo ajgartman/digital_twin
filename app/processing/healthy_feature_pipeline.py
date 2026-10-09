@@ -1,11 +1,11 @@
 import pandas as pd
 from sqlalchemy import select
 from app.database.connection import SessionLocal
-from app.models.db_models.orm_models import (ProcessMeasurement,
-                                             ElectricMeasurement,
-                                             VibrationMeasurement,
-                                             HealthyElectricBaseline,
-                                             HealthyVibrationBaseline)
+from app.models.database.orm_models import (ProcessMeasurement,
+                                            ElectricMeasurement,
+                                            VibrationMeasurement,
+                                            HealthyElectricFeatures,
+                                            HealthyVibrationFeatures)
 from sqlalchemy.exc import SQLAlchemyError
 
 
@@ -47,7 +47,7 @@ def process_single_run(measurement_type,process_run_id:str):
 
         if measurement_type == "electric":
             for row in dataframe.itertuples(index=False):
-                baseline = HealthyElectricBaseline(
+                baseline = HealthyElectricFeatures(
                     process_measurement_id=process_id_int,
                     channel = row.channel,
                     feature = row.feature,
@@ -67,7 +67,7 @@ def process_single_run(measurement_type,process_run_id:str):
 
         elif measurement_type == "vibration":
             for row in dataframe.itertuples(index=False):
-                baseline = HealthyVibrationBaseline(
+                baseline = HealthyVibrationFeatures(
                     process_measurement_id=process_id_int,
                     channel=row.channel,
                     feature=row.feature,
@@ -90,9 +90,9 @@ def process_single_run(measurement_type,process_run_id:str):
 def process_validation(measurement_type,measurement_id) -> bool:
 
     if measurement_type == "electric":
-        measurement_entity = HealthyElectricBaseline
+        measurement_entity = HealthyElectricFeatures
     else:
-        measurement_entity = HealthyVibrationBaseline
+        measurement_entity = HealthyVibrationFeatures
 
     with SessionLocal() as session:
         # Obtaining process measurement id

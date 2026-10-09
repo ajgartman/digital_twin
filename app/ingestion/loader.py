@@ -1,12 +1,9 @@
 import pandas as pd
-from pandas import DataFrame
-
-
 from app.core.config import Config
 
 # Loader .py file to load the raw .csv
 
-def load_csv(relative_path:str) -> DataFrame | None:
+def load_csv(relative_path:str) -> pd.DataFrame | None:
     file_path = Config.DATASET_ROOT / relative_path
 
     try:

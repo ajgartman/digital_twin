@@ -60,9 +60,9 @@ class ProcessMeasurement(Base):
                                                                                 cascade="all, delete-orphan")
     electric_measurements: Mapped[list["ElectricMeasurement"]] = relationship(back_populates="process_measurement",
                                                                                 cascade="all, delete-orphan")
-    healthy_electric_baselines: Mapped[list["HealthyElectricBaseline"]] = relationship(back_populates="process_measurement",
+    healthy_electric_baselines: Mapped[list["HealthyElectricFeatures"]] = relationship(back_populates="process_measurement",
                                                                                        cascade="all, delete-orphan")
-    healthy_vibration_baselines: Mapped[list["HealthyVibrationBaseline"]] = relationship(back_populates="process_measurement",
+    healthy_vibration_baselines: Mapped[list["HealthyVibrationFeatures"]] = relationship(back_populates="process_measurement",
                                                                                          cascade="all, delete-orphan")
 
     def __repr__(self):
@@ -72,8 +72,8 @@ class ProcessMeasurement(Base):
                 f" Condition description= = {self.condition_desc}")
 
 
-class HealthyElectricBaseline(Base):
-    __tablename__ = "healthy_electric_baseline"
+class HealthyElectricFeatures(Base):
+    __tablename__ = "healthy_electric_features"
 
     # Adding unique constraint - process measurement + channel + feature has to be unique!
     __table_args__ = (UniqueConstraint("process_measurement_id",
@@ -97,8 +97,8 @@ class HealthyElectricBaseline(Base):
                 f"Run ID: {self.id}")
 
 
-class HealthyVibrationBaseline(Base):
-    __tablename__ = "healthy_vibration_baseline"
+class HealthyVibrationFeatures(Base):
+    __tablename__ = "healthy_vibration_features"
 
     # Adding unique constraint - process measurement + channel + feature has to be unique!
     __table_args__ = (UniqueConstraint("process_measurement_id",

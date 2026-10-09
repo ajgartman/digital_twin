@@ -1,4 +1,4 @@
-from app.processing.healthy_baseline_pipeline import healthy_baseline_pipeline
+from app.processing.healthy_feature_pipeline import healthy_baseline_pipeline
 
 # Description:
 # Stage 2 Pipeline. Its task is to fetch processed data, calculate parameters per each channel feature and store it

@@ -1,8 +1,7 @@
 from sqlalchemy import select
 from app.database.connection import SessionLocal
-from app.models.db_models.orm_models import ProcessMeasurement
+from app.models.database.orm_models import ProcessMeasurement
 
-# To be edited!
 def get_healthy_performance_model(speed_sp: int) -> dict:
     # Hardcoding the run data...
     healthy_runs = {

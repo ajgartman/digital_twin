@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker
 from app.core.config import Config
-# Setting up the connection to the PostgresSQL.
+# Setting up the connection to the PostgreSQL.
 
 engine = create_engine(Config.PG_DATABASE_URL)
 

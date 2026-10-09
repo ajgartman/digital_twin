@@ -1,4 +1,4 @@
-from app.models.performance_models.process_performance_model import get_healthy_performance_model
+from app.models.performance.process_performance_model import get_healthy_performance_model
 # File to test scripts
 
 

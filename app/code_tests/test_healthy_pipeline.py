@@ -1,7 +1,7 @@
 import pandas as pd
 from app.database.connection import SessionLocal
 from sqlalchemy import select
-from app.models.db_models.orm_models import ElectricMeasurement,ProcessMeasurement,VibrationMeasurement
+from app.models.database.orm_models import ElectricMeasurement,ProcessMeasurement,VibrationMeasurement
 
 # ---- Processing pipeline for healthy baseline calculation ----
 # Selecting healthy data for specific setpoint, group by channel and feature, calculate mean/std/min/max

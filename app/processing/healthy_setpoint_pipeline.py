@@ -3,8 +3,8 @@ from sqlalchemy import select
 from app.database.connection import SessionLocal
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.models.db_models.orm_models import ProcessMeasurement, HealthyVibrationBaseline, \
-    HealthyElectricBaseline, HealthySetpointBaseline
+from app.models.database.orm_models import ProcessMeasurement, HealthyVibrationFeatures, \
+    HealthyElectricFeatures, HealthySetpointBaseline
 
 
 def get_baseline_data(run_id:str):
@@ -15,14 +15,13 @@ def get_baseline_data(run_id:str):
         measurement_id = session.scalar(measurement_id)
 
         # Getting the baseline data for both Electric and Vibration...
-        vibration_data = select(HealthyVibrationBaseline).where(HealthyVibrationBaseline.process_measurement_id == measurement_id)
+        vibration_data = select(HealthyVibrationFeatures).where(HealthyVibrationFeatures.process_measurement_id == measurement_id)
         vibration_data = session.scalars(vibration_data).all()
 
-        electric_data = select(HealthyElectricBaseline).where(HealthyElectricBaseline.process_measurement_id == measurement_id)
+        electric_data = select(HealthyElectricFeatures).where(HealthyElectricFeatures.process_measurement_id == measurement_id)
         electric_data = session.scalars(electric_data).all()
 
         return vibration_data,electric_data
-
 
 
 def get_setpoint_data(speed_sp: int,healthy_run_data:dict):

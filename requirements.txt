@@ -4,3 +4,5 @@ pandas
 sqlalchemy
 psycopg2-binary
 alembic
+psycopg
+psycopg-binary
