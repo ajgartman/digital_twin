@@ -9,7 +9,7 @@ from app.models.database.orm_models import (ProcessMeasurement,
 from sqlalchemy.exc import SQLAlchemyError
 
 
-# Healthy baseline pipeline
+# Healthy feature pipeline
 def process_single_run(measurement_type,process_run_id:str):
 
     if measurement_type == "electric":
@@ -18,13 +18,10 @@ def process_single_run(measurement_type,process_run_id:str):
         measurement_entity = VibrationMeasurement
 
     with SessionLocal() as session:
-
         query = select(measurement_entity).join(measurement_entity.process_measurement).where(ProcessMeasurement.run_id == process_run_id)
         result = session.scalars(query).all()
-
         # Process run id will be the same for the whole file.
         process_id_int = result[0].process_measurement_id
-
         data = [{"process_run_id": row.process_measurement.run_id,
                  "channel": row.channel,
                  "mean": row.mean,
@@ -34,7 +31,6 @@ def process_single_run(measurement_type,process_run_id:str):
 
         # Creating dataframe
         dataframe = pd.DataFrame(data)
-
         # Grouping dataframe by channel - selecting 4 channels - applying aggregate functions to each one of them
         dataframe = dataframe.groupby("channel")[["mean", "rms", "std", "peak"]].agg(
             ["mean", "std", "min", "max"])
@@ -74,8 +70,7 @@ def process_single_run(measurement_type,process_run_id:str):
                     mean=row.mean,
                     std=row.std,
                     feature_max=row.max,
-                    feature_min=row.min
-                )
+                    feature_min=row.min)
 
                 session.add(baseline)
             try:
@@ -104,10 +99,9 @@ def process_validation(measurement_type,measurement_id) -> bool:
 
     if existing_data:
         return False
-
     return True
 
-def healthy_baseline_pipeline(measurement_ids:list[str]):
+def healthy_feature_pipeline(measurement_ids:list[str]):
 
     measurement_types = ["electric","vibration"]
 

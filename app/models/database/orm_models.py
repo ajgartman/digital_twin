@@ -131,9 +131,7 @@ class HealthySetpointBaseline(Base):
             "measurement_type",
             "channel",
             "feature",
-            name="uq_healthy_baseline_condition",
-        ),
-    )
+            name="uq_healthy_baseline_condition"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
     speed_sp: Mapped[int] = mapped_column()

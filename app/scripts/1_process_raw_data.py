@@ -15,8 +15,11 @@ target_folders = ["impeller 1","impeller 2", "impeller 3","loose foot motor",
                   "bearing bsf","bearing contaminated","bearing pump 1", "bearing pump 2",
                   "bearing pump 3","broken rotor bar","healthy 1","healthy 2","healthy 3"]
 
+
+target_folder = ["bearing bpfi 3"]
+
 # Select target directory
-file_path = "Vibration/Motor-2/100/"
+file_path = "Vibration/Motor-2/50/"
 
 # Run the pipeline
-pipeline(file_path,target_folders)
+pipeline(file_path,target_folder)

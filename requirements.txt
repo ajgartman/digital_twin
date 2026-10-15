@@ -6,3 +6,6 @@ psycopg2-binary
 alembic
 psycopg
 psycopg-binary
+scikit-learn
+scipy
+numpy
