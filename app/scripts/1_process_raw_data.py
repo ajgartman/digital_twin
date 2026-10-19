@@ -22,4 +22,4 @@ target_folder = ["bearing bpfi 3"]
 file_path = "Vibration/Motor-2/50/"
 
 # Run the pipeline
-pipeline(file_path,target_folder)
+# pipeline(file_path,target_folder)

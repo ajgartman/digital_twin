@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2848289a-7714-45aa-82cd-182d67304792" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/routes/validation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/schemas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/schemas/validation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/test_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/test_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code_tests/drafts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/_code_drafts/drafts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code_tests/test_healthy_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code_tests/test_loader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code_tests/test_query.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code_tests/test_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ml/prepare_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml/prepare_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ml/train_classifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml/train_classifiers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/validation/healthy_validation_svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml/healthy_validation_svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/validation/run_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/run_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/1_process_raw_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/1_process_raw_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,47 +67,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.connection.executor&quot;: &quot;Run&quot;,
-    &quot;Python.drafts.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prepare_dataset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.query_test (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_validation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_validation_v2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_classifiers.executor&quot;: &quot;Run&quot;,
-    &quot;Python.validation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.validation_1 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.validation_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.validation_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;current_page&quot;: &quot;1&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;notes&quot;: &quot;Git push to both repos:\n- Git push all main&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for app.tests.test_api.test_validation_returns_summaries.executor": "Run",
+    "Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_value_error.executor": "Run",
+    "Python.connection.executor": "Run",
+    "Python.drafts.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.prepare_dataset.executor": "Run",
+    "Python.query_test (1).executor": "Run",
+    "Python.run_validation.executor": "Run",
+    "Python.run_validation_v2.executor": "Run",
+    "Python.train_classifiers.executor": "Run",
+    "Python.validation.executor": "Run",
+    "Python.validation_1 (1).executor": "Run",
+    "Python.validation_2.executor": "Run",
+    "Python.validation_test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "current_page": "1",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
+    "nodejs_package_manager_path": "npm",
+    "notes": "Git push to both repos:\n- Git push all main\n\nWhen using pytest, make sure you have __init__ functions in the directories set. It helps pytest identify the the target folder.",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;page_titles&quot;: [
-      &quot;Notes&quot;
+  "keyToStringList": {
+    "page_titles": [
+      "Notes"
     ]
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myDebuggerBackend" value="PYDEVD" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andrzej Gartman\OneDrive\Desktop\final_year_project\python_code\python_backend\app\models\validation\ml" />
+      <recent name="C:\Users\Andrzej Gartman\OneDrive\Desktop\final_year_project\python_code\python_backend\app\models\validation" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.run_validation">
-    <configuration name="prepare_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_backend" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,39 +125,14 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/ml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/ml/prepare_dataset.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="query_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python_backend" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/code_tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/code_tests/query_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,38 +191,49 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_classifiers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for app.tests.test_api.test_validation_returns_summaries" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="python_backend" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/ml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/ml/train_classifiers.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;app.tests.test_api.test_validation_returns_summaries&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for app.tests.test_validation.test_invalid_run_id_raises_value_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="python_backend" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;app.tests.test_validation.test_invalid_run_id_raises_value_error&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_validation" />
+        <item itemvalue="Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_value_error" />
+        <item itemvalue="Python tests.Python tests for app.tests.test_api.test_validation_returns_summaries" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.run_validation_v2" />
-        <item itemvalue="Python.train_classifiers" />
-        <item itemvalue="Python.prepare_dataset" />
-        <item itemvalue="Python.query_test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +272,7 @@
       <workItem from="1792081309118" duration="28000" />
       <workItem from="1792141436176" duration="4996000" />
       <workItem from="1792169477876" duration="34000" />
-      <workItem from="1792321973225" duration="2278000" />
+      <workItem from="1792321973225" duration="17474000" />
     </task>
     <servers />
   </component>
@@ -266,14 +282,16 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_backend$connection.coverage" NAME="connection Coverage Results" MODIFIED="1791481566173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/database" />
     <SUITE FILE_PATH="coverage/python_backend$run_validation_v2.coverage" NAME="run_validation_v2 Coverage Results" MODIFIED="1792080188696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
-    <SUITE FILE_PATH="coverage/python_backend$drafts.coverage" NAME="drafts Coverage Results" MODIFIED="1791896347770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/code_tests" />
     <SUITE FILE_PATH="coverage/python_backend$validation_test.coverage" NAME="validation_test Coverage Results" MODIFIED="1792059650872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/code_tests" />
-    <SUITE FILE_PATH="coverage/python_backend$run_validation.coverage" NAME="run_validation Coverage Results" MODIFIED="1792322217681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
-    <SUITE FILE_PATH="coverage/python_backend$prepare_dataset.coverage" NAME="prepare_dataset Coverage Results" MODIFIED="1792064313228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/ml" />
+    <SUITE FILE_PATH="coverage/python_backend$drafts.coverage" NAME="drafts Coverage Results" MODIFIED="1791896347770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/code_tests" />
     <SUITE FILE_PATH="coverage/python_backend$validation_2.coverage" NAME="validation_2 Coverage Results" MODIFIED="1791816771650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
     <SUITE FILE_PATH="coverage/python_backend$validation.coverage" NAME="validation Coverage Results" MODIFIED="1791814477037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
     <SUITE FILE_PATH="coverage/python_backend$validation_1__1_.coverage" NAME="validation_1 (1) Coverage Results" MODIFIED="1791973650257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
     <SUITE FILE_PATH="coverage/python_backend$query_test__1_.coverage" NAME="query_test (1) Coverage Results" MODIFIED="1792063082640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/code_tests" />
+    <SUITE FILE_PATH="coverage/python_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1792398778644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/python_backend$run_validation.coverage" NAME="run_validation Coverage Results" MODIFIED="1792406820161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
+    <SUITE FILE_PATH="coverage/python_backend$prepare_dataset.coverage" NAME="prepare_dataset Coverage Results" MODIFIED="1792064313228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/ml" />
     <SUITE FILE_PATH="coverage/python_backend$train_classifiers.coverage" NAME="train_classifiers Coverage Results" MODIFIED="1792064761951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/ml" />
+    <SUITE FILE_PATH="coverage/python_backend$.coverage" NAME=" Coverage Results" MODIFIED="1792401722849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

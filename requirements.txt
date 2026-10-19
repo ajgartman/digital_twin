@@ -9,3 +9,6 @@ psycopg-binary
 scikit-learn
 scipy
 numpy
+pytest
+httpx2
+pydantic

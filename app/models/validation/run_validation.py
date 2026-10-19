@@ -109,18 +109,18 @@ def get_healthy_baseline(speed_sp: int, excluded_run: str | None = None, exclude
         tolerances = feature_table.groupby(["channel", "feature"]).agg(
             loo_mean_tolerance=("mean", max_loo_deviation),
             loo_std_tolerance=("std", max_loo_deviation),).reset_index()
+
         df_result = df_result.merge(tolerances, on=["channel", "feature"], how="left")
 
         return df_result
 
 
     electric_baseline = aggregate_baseline(electric_df, electric_df.drop(columns=["process_measurement_id"]))
-    print(electric_baseline)
 
     vibration_baseline = aggregate_baseline(vibration_df, vibration_df.drop(columns=["process_measurement_id"]))
-    print(vibration_baseline)
 
     return electric_baseline, vibration_baseline
+
 
 def get_observed_data(run_id: str,speed_sp:int) -> tuple[pd.DataFrame, pd.DataFrame]:
 
@@ -176,8 +176,7 @@ def get_observed_data(run_id: str,speed_sp:int) -> tuple[pd.DataFrame, pd.DataFr
                 # clear unavailable result instead of failing on groupby.
                 if dataframe.empty:
                     dataframe_dict[measurement_type] = pd.DataFrame(
-                        columns=["channel", "feature", "mean", "std", "min", "max"]
-                    )
+                        columns=["channel", "feature", "mean", "std", "min", "max"])
                     continue
 
                 # Grouping dataframe by channel - selecting 4 channels - applying aggregate functions to each one of them
@@ -234,8 +233,9 @@ def compare_feature(observed: pd.DataFrame, baseline: pd.DataFrame) -> dict:
         "mean_deviation": None, "std_deviation": None,
         "mean_tolerance": None, "std_tolerance": None,
         "mean_envelope_ratio": None, "std_envelope_ratio": None,
-        "reason": None,}
+        "reason": None}
 
+    # Length checks
     if len(observed) != 1:
         result["reason"] = f"expected_one_observed_row_got_{len(observed)}"
         return result
@@ -245,6 +245,7 @@ def compare_feature(observed: pd.DataFrame, baseline: pd.DataFrame) -> dict:
 
     obs = observed.iloc[0]
     ref = baseline.iloc[0]
+
     required_obs = ["mean", "std"]
     required_ref = ["median", "std_median", "loo_mean_tolerance", "loo_std_tolerance"]
     if any(pd.isna(obs.get(column)) for column in required_obs):
@@ -331,6 +332,7 @@ def summarise_validation(results: list[dict]) -> dict:
                                     for key in ("mean_envelope_ratio", "std_envelope_ratio")
                                     if row.get(key) is not None), default=None)}
 
+
 def validate_measurement(run_id:str,excluded_condition :str|None = None):
 
     print("Run being validated: ", run_id)
@@ -379,21 +381,21 @@ def validate_measurement(run_id:str,excluded_condition :str|None = None):
     electric_mean_violations = [r for r in electric_output if r["mean_check"] is False]
     vibration_mean_violations = [r for r in vibration_output if r["mean_check"] is False]
 
-    print()
-    print(f"Electric mean-check violations: {len(electric_mean_violations)}/{len(electric_output)}")
-    print(f"Vibration mean-check violations: {len(vibration_mean_violations)}/{len(vibration_output)}")
+    # print()
+    # print(f"Electric mean-check violations: {len(electric_mean_violations)}/{len(electric_output)}")
+    # print(f"Vibration mean-check violations: {len(vibration_mean_violations)}/{len(vibration_output)}")
 
     summary_electric = summarise_validation(electric_output)
     summary_vibration = summarise_validation(vibration_output)
 
-    print("Electric summary:", summary_electric)
-    print("Vibration summary:", summary_vibration)
-    print("Run-level status:", {
-        "electric": summary_electric["run_status"],
-        "vibration": summary_vibration["run_status"],
-    })
-    return summary_electric, summary_vibration
+    # print("Electric summary:", summary_electric)
+    # print("Vibration summary:", summary_vibration)
 
+    return summary_electric, summary_vibration
 
 if __name__ == "__main__":
     result = validate_measurement("M2_50_healthy_1_0")
+
+    print("Electric check: ",result[0])
+    print("--- --- ---")
+    print("Vibration check: ",result[1])

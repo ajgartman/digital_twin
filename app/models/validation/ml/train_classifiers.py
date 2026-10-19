@@ -17,7 +17,7 @@ from sklearn.model_selection import (
 from sklearn.pipeline import Pipeline
 
 from app.database.connection import SessionLocal
-from app.ml.prepare_dataset import build_dataset  # Update this import
+from app.models.validation.ml.prepare_dataset import build_dataset  # Update this import
 
 
 RANDOM_STATE = 42
