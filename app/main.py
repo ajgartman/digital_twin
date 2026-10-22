@@ -11,9 +11,7 @@ async def root():
 def health():
     return {"status":"ok"}
 
-
 app.include_router(validation_router)
-
 
 # Running the server from the code editor.
 if __name__ == "__main__":

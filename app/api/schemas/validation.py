@@ -17,4 +17,3 @@ class ValidationResponse(BaseModel):
     electric_summary: ValidationSummary
     vibration_summary: ValidationSummary
     status: str
-
