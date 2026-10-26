@@ -1,17 +1,17 @@
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from app.api.routes.validation import router as validation_router
 app = FastAPI()
+app.include_router(validation_router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World!"}
+    return {"message": "Hello Everyone!"}
 
 @app.get("/health")
 def health():
     return {"status":"ok"}
 
-app.include_router(validation_router)
 
 # Running the server from the code editor.
 if __name__ == "__main__":

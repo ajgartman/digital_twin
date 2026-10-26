@@ -12,3 +12,5 @@ numpy
 pytest
 httpx2
 pydantic
+websockets
+wsproto

@@ -102,8 +102,8 @@ def compare_feature(observed: pd.DataFrame, baseline: pd.DataFrame) -> dict:
         "observed_std": observed_std,
         "baseline_median": baseline_median,
         "mad": float(ref["mad"]) if pd.notna(ref.get("mad")) else None,
-        "btw_run_std": ref.get("btw_run_std"),
-        "btw_run_std_spread": ref.get("btw_run_std_spread"),
+        "btw_run_std": float(ref.get("btw_run_std")),
+        "btw_run_std_spread": float(ref.get("btw_run_std_spread")),
         "mean_deviation": mean_deviation,
         "std_deviation": std_deviation,
         "mean_tolerance": mean_tolerance,
@@ -119,8 +119,7 @@ def compare_feature(observed: pd.DataFrame, baseline: pd.DataFrame) -> dict:
     result_f["std_score"] = result_f["std_envelope_ratio"]
     result_f["mean_check"] = mean_deviation <= mean_tolerance + mean_epsilon
     result_f["std_check"] = std_deviation <= std_tolerance + std_epsilon
-    # Per-run min/max are intrinsically unstable with only three healthy runs;
-    # retain the fields for report compatibility but do not let them veto a run.
+    # Per-run min/max are intrinsically unstable with only three healthy runs; # retain the fields for report compatibility but do not let them veto a run.
     result_f["min_check"] = None
     result_f["max_check"] = None
     result_f["reason"] = "leave_one_healthy_run_out_deviation_envelope"
@@ -128,6 +127,7 @@ def compare_feature(observed: pd.DataFrame, baseline: pd.DataFrame) -> dict:
 
 
 def summarise_validation(results: list[dict]) -> dict:
+
     if not results:
         return {
             "feature_count": 0,
@@ -138,8 +138,7 @@ def summarise_validation(results: list[dict]) -> dict:
             "features_with_any_violation_rate": None,
             "run_status": "INSUFFICIENT_DATA"}
 
-    # Min/max are retained in per-feature output for compatibility, but are
-    # deliberately excluded from the decision because run extrema are unstable.
+    # Min/max are retained in per-feature output for compatibility, but are deliberately excluded from the decision because run extrema are unstable.
     check_names = ("mean_check", "std_check")
     check_failures = {}
     check_unknowns = {}
@@ -147,10 +146,8 @@ def summarise_validation(results: list[dict]) -> dict:
         check_failures[name] = sum(row.get(name) is False for row in results)
         check_unknowns[name] = sum(row.get(name) is None for row in results)
 
-    failed_features = sum(any(row.get(name) is False for name in check_names)
-                          for row in results)
-    evaluated_features = sum(any(row.get(name) is not None for name in check_names)
-                             for row in results)
+    failed_features = sum(any(row.get(name) is False for name in check_names) for row in results)
+    evaluated_features = sum(any(row.get(name) is not None for name in check_names) for row in results)
     run_status = ("FLAG_FOR_REVIEW" if failed_features else
                   "WITHIN_HEALTHY_ENVELOPE" if evaluated_features else
                   "INSUFFICIENT_DATA")
@@ -167,6 +164,29 @@ def summarise_validation(results: list[dict]) -> dict:
                                     if row.get(key) is not None), default=None)}
 
 
+def summarize_by_row(data_dict:dict):
+
+    mean_check = data_dict["mean_check"]
+    std_check = data_dict["std_check"]
+    min_check = data_dict["min_check"]
+    max_check = data_dict["max_check"]
+    channel = data_dict["channel"]
+    feature = data_dict["feature"]
+    run_status = "FLAG FOR REVIEW" if not mean_check or not std_check else "WITHIN HEALTHY ENVELOPE"
+
+    result = {
+        "mean_check":mean_check,
+        "std_check":std_check,
+        "min_check":min_check,
+        "max_check":max_check,
+        "channel":channel,
+        "feature":feature,
+        "run_status":run_status
+    }
+
+    return result
+
+
 def compare_dataframe(observed_electric:pd.DataFrame,
                        baseline_electric:pd.DataFrame,
                        observed_vibration:pd.DataFrame,
@@ -178,6 +198,7 @@ def compare_dataframe(observed_electric:pd.DataFrame,
     electric_output = []
     vibration_output = []
 
+    # So we are going through every channel... one by one. And then by the feature.
     # Electric comparison
     for channel in range(1, electric_channels + 1):
         for feature in features:

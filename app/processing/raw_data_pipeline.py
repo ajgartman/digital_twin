@@ -7,7 +7,7 @@ from app.processing.feature_extraction_pipeline import extract_features_datafram
 from app.core.config import Config
 from app.database.repository import get_process_measurement, check_existing_data, save_processed_data
 
-# Processing pipeline v1.
+# Processing pipeline.
 def process_csv(path:str) -> pd.DataFrame | None:
 
     #. Parse the data
@@ -64,6 +64,7 @@ def process_folder(folder_path:str) -> pd.DataFrame:
     else:
         combined = pd.concat(feature_folder,ignore_index=True)
         return combined
+
 
 def pipeline(file_path:str,target_folders:list[str]) -> pd.DataFrame:
 

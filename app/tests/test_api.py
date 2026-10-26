@@ -54,7 +54,6 @@ def test_validation_returns_404_for_missing_measurement(monkeypatch):
 
 
 def test_validation_returns_summaries_dependency_override():
-
     # Fake function
     def fake_func(run_id):
         fake_summary = {

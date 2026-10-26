@@ -5,7 +5,6 @@ from app.models.validation.exceptions import MeasurementNotFoundError, InvalidRu
 
 router = APIRouter()
 
-
 # Setting up the dependency. We choose what we want to inject/pass inside the function.
 def get_validation_service():
     return validate_run_func
@@ -13,7 +12,6 @@ def get_validation_service():
 @router.get("/api/measurements/{run_id}/validation",response_model=ValidationResponse) # Adding expected response model
 def validate_run(run_id: str,service = Depends(get_validation_service)):
     try:
-        print(type(service))
         result = service(run_id)
     except MeasurementNotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
