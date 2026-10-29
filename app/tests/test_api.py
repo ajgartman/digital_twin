@@ -1,8 +1,9 @@
 # Testing the API endpoints
 from fastapi.testclient import TestClient
-from app.api.routes.validation import get_validation_service
+from app.api.routes.main_functions import get_validation_service, get_replay_controller
 from app.main import app
 from app.models.validation.exceptions import MeasurementNotFoundError
+from app.services.replay_service import ReplayController
 
 client = TestClient(app)
 
@@ -21,7 +22,7 @@ def test_validation_returns_summaries(monkeypatch):
                     "max_envelope_ratio": 1.0,}
         return summary,summary
 
-    monkeypatch.setattr("app.api.routes.validation.validate_run", fake_validate_measurement)
+    monkeypatch.setattr("app.api.routes.main_functions.validate_run", fake_validate_measurement)
 
     # Running a healthy run, expecting healthy result for both vibration and electric
     response = client.get("/api/measurements/M2_50_healthy_1_0/validation")
@@ -45,7 +46,7 @@ def test_validation_returns_summaries(monkeypatch):
 def test_validation_returns_404_for_missing_measurement(monkeypatch):
     def fake_validate_measurement(run_id):
         raise MeasurementNotFoundError("Measurement not found")
-    monkeypatch.setattr("app.api.routes.validation.validate_run",fake_validate_measurement)
+    monkeypatch.setattr("app.api.routes.main_functions.validate_run", fake_validate_measurement)
 
     response = client.get(f"/api/measurements/M2_50_healthy_8_0/validation")
 
@@ -96,5 +97,25 @@ def test_validation_returns_500_error():
     try:
         response = client.get("/api/measurements/M2_50_healthy_1_0/validation")
         assert response.status_code == 500
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_get_controller_state():
+
+    # Fake return function
+    def fake_return_func(run_id:str):
+        result = ReplayController()
+        return result
+
+    # Dependency that returns fake function
+    def override_dependency():
+        return fake_return_func
+
+    # Overwriting the dependency
+    app.dependency_overrides[get_replay_controller] = override_dependency
+    try:
+        response = client.get("api/replay/M2_50_healthy_1_0")
+        assert response.status_code == 200
     finally:
         app.dependency_overrides.clear()

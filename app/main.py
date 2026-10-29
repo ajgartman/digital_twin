@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from app.api.routes.validation import router as validation_router
+from app.api.routes.main_functions import router as validation_router
 app = FastAPI()
 app.include_router(validation_router)
 
