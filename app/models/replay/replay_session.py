@@ -21,5 +21,15 @@ class ReplaySession:
     def get_status(self):
         return self.status
 
+    # Nice advice, when you use in-line assignment, after 'else' we just put the variable itself, no = assignment.
+
     def start(self):
-        self.status = "running"
+        self.status = "running" if self.status == "idle" or self.status == "paused" else "idle"
+
+
+    def pause(self):
+        self.status = "paused" if self.status == "running" else "idle"
+
+
+    def stop(self):
+        self.status = "stopped" if self.status in ["running","paused"] else "idle"

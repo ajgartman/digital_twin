@@ -1,6 +1,6 @@
 import asyncio
-
 from app.models.replay.replay_session import ReplaySession
+from app.models.validation.validation_logic import summarize_by_row
 from app.services.validation_service import validate_run_func
 
 # Replay service will fetch the healthy baseline and then compare window/measurement by measurement with observed run,
@@ -42,31 +42,40 @@ class ReplayController:
             "latest_results":self.session.latest_results}
         return result
 
-
-    async def run_replay(self):
-        while self.session.status == "running":
-            self.session.latest_results = {"electric":self.session.electric_measurements[self.session.electric_index],
-                                           "vibration":self.session.vibration_measurements[self.session.vibration_index]}
-
-            print(self.session.latest_results)
-            self.advance_replay()
-            if self.session.status == "completed":
-                break
-            await asyncio.sleep(self.interval)
-
-
-    def stop_replay(self):
-        self.session.status = "completed"
-
     @property
     def status(self):
         return self.session.get_status
 
 
+    def pause(self):
+        self.session.pause()
+
+
+    def start(self):
+        self.session.start()
+
+
+    def stop(self):
+        self.session.status = "stopped"
+
+
+    async def run_replay(self):
+        while self.session.status in ["running","paused"]:
+            if self.session.status != "paused":
+                self.advance_replay()
+                self.session.latest_results = {"electric":summarize_by_row(self.session.electric_measurements[self.session.electric_index]),
+                                               "vibration":summarize_by_row(self.session.vibration_measurements[self.session.vibration_index])}
+                print("Script running...")
+                print("Session status: ",self.session.status)
+            await asyncio.sleep(self.interval)
+        print("Replay function terminated.")
+
+
+# --- --- --- ---
 def get_replay(run_id:str):
     result = active_replays.get(run_id,None)
     if result is None:
-        raise ValueError ("Key does not exist or session has not started!")
+        raise ValueError (f"Key does not exist or session has not started! Current controller list: {active_replays} ")
     return result
 
 
@@ -79,7 +88,6 @@ def start_replay(run_id:str):
 
     # Getting the healthy and observed data for given run. Reusing the existing functions, toggling the bit
     electric_output, vibration_output, speed_sp = validate_run_func(run_id,replay_mode=True)
-
     # Creating replay controller class
     replay_controller = ReplayController()
     # Creating replay session
@@ -90,7 +98,6 @@ def start_replay(run_id:str):
 
     # Remember to keep the object inside the logic sections, we only expose certain data/attributes!
     return replay_controller #We are returning replay controller... which will be running? Interesting...
-
 
 
 if __name__ == "__main__":

@@ -166,6 +166,9 @@ def summarise_validation(results: list[dict]) -> dict:
 
 def summarize_by_row(data_dict:dict):
 
+    # Summarization, can be altered to add additional data.
+    observed_mean = data_dict["observed_mean"]
+    observed_std = data_dict["observed_std"]
     mean_check = data_dict["mean_check"]
     std_check = data_dict["std_check"]
     min_check = data_dict["min_check"]
@@ -175,6 +178,8 @@ def summarize_by_row(data_dict:dict):
     run_status = "FLAG FOR REVIEW" if not mean_check or not std_check else "WITHIN HEALTHY ENVELOPE"
 
     result = {
+        "observed_mean":observed_mean,
+        "observed_std":observed_std,
         "mean_check":mean_check,
         "std_check":std_check,
         "min_check":min_check,

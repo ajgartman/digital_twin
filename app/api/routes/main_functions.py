@@ -60,3 +60,40 @@ async def start_replay_endpoint(run_id: str):
         # Scheduling task - important!
         asyncio.create_task(controller.run_replay())
         return controller.get_state()
+
+
+@router.post("/api/replay/{run_id}/pause")
+def pause(run_id:str, service = Depends(get_replay_controller)):
+    print("Pause command triggerred!")
+    try:
+        # Getting the controller object
+        replay_controller: ReplayController = service(run_id)
+        # Calling the pause method
+        replay_controller.pause()
+        return replay_controller.get_state()
+    except ValueError as v:
+        raise HTTPException(status_code=404, detail=str(v))
+
+@router.post("/api/replay/{run_id}/start")
+def start(run_id:str, service = Depends(get_replay_controller)):
+    print("Start command request triggerred!")
+    try:
+        # Getting the controller object
+        replay_controller: ReplayController = service(run_id)
+        # Calling the pause method
+        replay_controller.start()
+        return replay_controller.get_state()
+    except ValueError as v:
+        raise HTTPException(status_code=404, detail=str(v))
+
+@router.post("/api/replay/{run_id}/stop")
+def stop(run_id:str, service = Depends(get_replay_controller)):
+    print("Stop command triggerred!")
+    try:
+        # Getting the controller object
+        replay_controller: ReplayController = service(run_id)
+        # Calling the pause method
+        replay_controller.stop()
+        return replay_controller.get_state()
+    except ValueError as v:
+        raise HTTPException(status_code=404, detail=str(v))
