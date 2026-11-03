@@ -56,5 +56,7 @@ def get_healthy_performance_model(speed_sp: int) -> dict:
             "max": max(pressure_values),
         }
     }
-
     return model
+
+
+print(get_healthy_performance_model(50))

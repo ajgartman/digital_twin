@@ -176,6 +176,7 @@ def summarize_by_row(data_dict:dict):
     channel = data_dict["channel"]
     feature = data_dict["feature"]
     run_status = "FLAG FOR REVIEW" if not mean_check or not std_check else "WITHIN HEALTHY ENVELOPE"
+    violation = True if not mean_check or not std_check else False
 
     result = {
         "observed_mean":observed_mean,
@@ -186,9 +187,9 @@ def summarize_by_row(data_dict:dict):
         "max_check":max_check,
         "channel":channel,
         "feature":feature,
-        "run_status":run_status
+        "run_status":run_status,
+        "violation":violation
     }
-
     return result
 
 

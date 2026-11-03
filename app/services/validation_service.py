@@ -35,6 +35,6 @@ def validate_run_func(run_id:str,excluded_condition :str|None = None, replay_mod
     return summary_electric, summary_vibration
 
 if __name__ == "__main__":
-    result = validate_run_func("M2_50_healthy_1_0")
+    result = validate_run_func("M2_100_bearing_bpfo_1")
     print(result[0])
     print(result[1])

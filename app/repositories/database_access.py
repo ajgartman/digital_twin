@@ -175,3 +175,18 @@ def get_healthy_data(speed_sp: int, excluded_run: str | None = None, excluded_ru
         } for row in vibration_data])
 
     return electric_df, vibration_df,process_measurement_ids
+
+
+# Fetching process data - pressure, flow, etc...
+def get_process_data(run_id:str):
+
+    with SessionLocal() as session:
+        query = select(ProcessMeasurement).where(ProcessMeasurement.run_id == run_id)
+        result = session.scalars(query).one()
+
+    return_dict = {"speed_sp":result.speed_sp,
+                   "speed_rpm":result.speed_rpm,
+                   "pressure":result.pressure,
+                   "flow":result.flow}
+
+    return return_dict
