@@ -14,3 +14,4 @@ httpx2
 pydantic
 websockets
 wsproto
+joblib

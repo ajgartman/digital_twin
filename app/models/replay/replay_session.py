@@ -5,9 +5,11 @@ class ReplaySession:
                  speed:float,
                  electric_data:list[dict],
                  vibration_data:list[dict],
-                 process_data:dict):
+                 process_data:dict,
+                 healthy_process_baseline:dict):
 
         self.run_id = run_id
+        self.fault_id = None
         self.status = "idle"
 
         self.electric_index = 0
@@ -15,15 +17,20 @@ class ReplaySession:
         # We know that measurement has specified no. of output rows.
         self.electric_measurements = electric_data
         self.vibration_measurements = vibration_data
+        self.electric_cache_measurements = None
+        self.vibration_cache_measurements = None
         self.electric_total = len(self.electric_measurements)
         self.vibration_total = len(self.vibration_measurements)
         self.process_data = process_data
+        self.process_cache_data = None
         self.speed = speed
         self.latest_results = None
         self.electric_violation_qty = 0
         self.vibration_violation_qty = 0
         self.electric_violation_rate = 0
         self.vibration_violation_rate = 0
+        self.healthy_process_baseline = healthy_process_baseline
+        self.fault_classification_data = None
 
     # Property getter
     @property
@@ -31,7 +38,6 @@ class ReplaySession:
         return self.status
 
     # Nice advice, when you use in-line assignment, after 'else' we just put the variable itself, no = assignment.
-
     def start(self):
         # Setting the run status to running, no constraints needed... (I hope so)
         self.status = "running"
@@ -43,7 +49,11 @@ class ReplaySession:
 
     def stop(self):
         self.status = "stopped"
-
-        # Resetting index
+        # Resetting values
         self.electric_index = 0
         self.vibration_index = 0
+        self.fault_classification_data = None
+        self.electric_violation_qty = 0
+        self.vibration_violation_qty = 0
+        self.electric_violation_rate = 0
+        self.vibration_violation_rate = 0

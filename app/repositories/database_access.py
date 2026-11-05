@@ -38,7 +38,6 @@ def get_observed_data(run_id: str,speed_sp:int) -> tuple[pd.DataFrame, pd.DataFr
         else:
             measurement_types = ["electric", "vibration"]
             dataframe_dict = {}
-
             for measurement_type in measurement_types:
 
                 if measurement_type == "electric":
@@ -59,7 +58,6 @@ def get_observed_data(run_id: str,speed_sp:int) -> tuple[pd.DataFrame, pd.DataFr
 
                 # Creating dataframe
                 dataframe = pd.DataFrame(data)
-
                 # A run may have no rows for one sensor modality. Preserve a
                 # clear unavailable result instead of failing on groupby.
                 if dataframe.empty:
@@ -190,3 +188,11 @@ def get_process_data(run_id:str):
                    "flow":result.flow}
 
     return return_dict
+
+# Getting all process measurements
+def get_process_measurements():
+    with SessionLocal() as session:
+        query = select(ProcessMeasurement)
+        query = session.scalars(query).all()
+
+    return query

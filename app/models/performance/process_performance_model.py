@@ -57,6 +57,3 @@ def get_healthy_performance_model(speed_sp: int) -> dict:
         }
     }
     return model
-
-
-print(get_healthy_performance_model(50))
