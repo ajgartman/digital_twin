@@ -84,9 +84,10 @@ class ReplayController:
         # Resetting violation data
         self.vibration_violation_bool = False
         self.electric_violation_bool = False
-        # Resetting classification data
+        # Resetting classification bool
         self.classification_completed_bool = False
-
+        # Resetting the classification data
+        self.session.fault_classification_data = None
 
 
     def revert_fault(self):
@@ -110,10 +111,13 @@ class ReplayController:
         self.session.vibration_violation_qty = 0
         self.session.vibration_violation_rate = 0
 
-        # bools
+        # booleans
         self.vibration_violation_bool = False
         self.electric_violation_bool = False
         self.classification_completed_bool = False
+
+        # Resetting the classification data
+        self.session.fault_classification_data = None
 
 
     def fault_classifier(self):

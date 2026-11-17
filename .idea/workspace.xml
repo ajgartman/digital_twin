@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2848289a-7714-45aa-82cd-182d67304792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/classifier_models/electric_fault_classifier.joblib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/classifier_models/vibration_fault_classifier.joblib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/classify_run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/evaluation_report.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/classification/training_script/train_fault_classifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_code_drafts/drafts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/_code_drafts/drafts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/routes/main_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/routes/main_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/performance/process_performance_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/performance/process_performance_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/replay/replay_session.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/replay/replay_session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/validation/ml/healthy_validation_svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml_old/healthy_validation_svm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/validation/ml/prepare_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml_old/prepare_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/validation/ml/train_classifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/ml_old/train_classifiers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/database_access.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/database_access.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/validation/validation_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/validation/validation_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/replay_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/replay_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/validation_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/validation_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,61 +39,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000001628446884" />
-      <entry key="MS500" value="1.0439617108639827" />
-      <entry key="S2" value="1.6775101711841565" />
-      <entry key="S5" value="3.3323423614886996" />
-      <entry key="S10" value="5.146720175022256" />
-      <entry key="S30" value="7.373181356112067" />
-      <entry key="S60" value="8.214911624326284" />
-      <entry key="M2" value="9.207603774865516" />
-      <entry key="M5" value="12.446506566105949" />
-      <entry key="M10" value="19.40921185648266" />
-      <entry key="M15" value="25.856532259457452" />
-      <entry key="M30" value="43.0591673793141" />
-      <entry key="H1" value="79.36476019172392" />
-      <entry key="H2" value="135.39990348623917" />
-      <entry key="H4" value="191.28113669359817" />
-      <entry key="D1" value="266.39075777233427" />
-      <entry key="W1" value="283.08507936820666" />
+      <entry key="MS100" value="1.000006835124295" />
+      <entry key="MS500" value="1.1214166112612831" />
+      <entry key="S2" value="2.485368561977567" />
+      <entry key="S5" value="4.074619712335144" />
+      <entry key="S10" value="5.7153938560732485" />
+      <entry key="S30" value="12.395870169402935" />
+      <entry key="S60" value="18.59337580216665" />
+      <entry key="M2" value="24.110959219765714" />
+      <entry key="M5" value="30.849170044639866" />
+      <entry key="M10" value="39.02835280314027" />
+      <entry key="M15" value="45.925636698687015" />
+      <entry key="M30" value="63.64311526654513" />
+      <entry key="H1" value="100.18619648508536" />
+      <entry key="H2" value="156.44786024627095" />
+      <entry key="H4" value="212.62410967886234" />
+      <entry key="D1" value="288.2406745766606" />
+      <entry key="W1" value="305.06234987002557" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0012360904237991013" />
-      <entry key="MS500" value="0.2620793708699336" />
-      <entry key="S2" value="0.776384628211563" />
-      <entry key="S5" value="1.201128449164844" />
-      <entry key="S10" value="1.5066055751116183" />
-      <entry key="S30" value="1.8077266631559055" />
-      <entry key="S60" value="1.9000605680494624" />
-      <entry key="M2" value="1.9642554991888412" />
-      <entry key="M5" value="2.2770979598963605" />
-      <entry key="M10" value="3.1674501662188277" />
-      <entry key="M15" value="3.9950444585528535" />
-      <entry key="M30" value="5.99055215307065" />
-      <entry key="H1" value="9.880740048492374" />
-      <entry key="H2" value="16.132092238061947" />
-      <entry key="H4" value="22.63196696958002" />
-      <entry key="D1" value="31.620423830165514" />
-      <entry key="W1" value="33.64557249839273" />
+      <entry key="MS100" value="1.1059295239886617E-205" />
+      <entry key="MS500" value="1.0203949006834235E-41" />
+      <entry key="S2" value="6.132828055204364E-11" />
+      <entry key="S5" value="1.0930071368807568E-4" />
+      <entry key="S10" value="0.014371971333525838" />
+      <entry key="S30" value="0.3833878578996575" />
+      <entry key="S60" value="0.8750245551862279" />
+      <entry key="M2" value="1.3329822775423124" />
+      <entry key="M5" value="1.9499895019066664" />
+      <entry key="M10" value="2.931129931659528" />
+      <entry key="M15" value="3.793777033008182" />
+      <entry key="M30" value="5.837702336568738" />
+      <entry key="H1" value="9.753871285128563" />
+      <entry key="H2" value="16.02818955064045" />
+      <entry key="H4" value="22.558965873800908" />
+      <entry key="D1" value="31.60340193302534" />
+      <entry key="W1" value="33.64298446202563" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.07280083290587941" />
-      <entry key="MS500" value="0.7078229586131014" />
-      <entry key="S2" value="2.07919603439295" />
-      <entry key="S5" value="4.2897342123229265" />
-      <entry key="S10" value="6.496934646639496" />
-      <entry key="S30" value="9.11732101186558" />
-      <entry key="S60" value="10.081397173227868" />
-      <entry key="M2" value="11.154344010422149" />
-      <entry key="M5" value="14.714502255127103" />
-      <entry key="M10" value="22.56859338410162" />
-      <entry key="M15" value="29.843885347956547" />
-      <entry key="M30" value="49.042719359479584" />
-      <entry key="H1" value="89.23838994500719" />
-      <entry key="H2" value="151.52534275855913" />
-      <entry key="H4" value="213.9081170084256" />
-      <entry key="D1" value="298.00995983800505" />
-      <entry key="W1" value="316.73046461721935" />
+      <entry key="MS100" value="0.9460641130609472" />
+      <entry key="MS500" value="1.1089830701202323" />
+      <entry key="S2" value="2.4780654887096936" />
+      <entry key="S5" value="4.0694502176262475" />
+      <entry key="S10" value="5.718428638545468" />
+      <entry key="S30" value="12.73541188903027" />
+      <entry key="S60" value="19.424250569579215" />
+      <entry key="M2" value="25.412234695308083" />
+      <entry key="M5" value="32.78172639975194" />
+      <entry key="M10" value="41.94687168029781" />
+      <entry key="M15" value="49.708604702554204" />
+      <entry key="M30" value="69.47220484945657" />
+      <entry key="H1" value="109.9321433586652" />
+      <entry key="H2" value="172.46898450014118" />
+      <entry key="H4" value="235.17787677091175" />
+      <entry key="D1" value="319.84281728107703" />
+      <entry key="W1" value="338.70514164897975" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -122,55 +107,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for app.tests.test_api.test_validation_returns_summaries.executor": "Run",
-    "Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_custom_error.executor": "Run",
-    "Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_value_error.executor": "Run",
-    "Python tests.Python tests in test_replay.py.executor": "Run",
-    "Python tests.Python tests in test_validation.py.executor": "Run",
-    "Python.classify_run.executor": "Run",
-    "Python.connection.executor": "Run",
-    "Python.database_access.executor": "Run",
-    "Python.drafts.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.main_functions.executor": "Run",
-    "Python.prepare_dataset.executor": "Run",
-    "Python.process_performance_model.executor": "Run",
-    "Python.query_test (1).executor": "Run",
-    "Python.replay_service.executor": "Run",
-    "Python.run_validation.executor": "Run",
-    "Python.run_validation_v2.executor": "Run",
-    "Python.train_classifiers.executor": "Run",
-    "Python.validation.executor": "Run",
-    "Python.validation_1 (1).executor": "Run",
-    "Python.validation_2.executor": "Run",
-    "Python.validation_service.executor": "Run",
-    "Python.validation_test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "current_page": "1",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Andrzej Gartman/OneDrive/Desktop/final_year_project/python_code/python_backend/app/models/classification/training_script",
-    "node.js.detected.package.jshint": "true",
-    "node.js.selected.package.jshint": "",
-    "nodejs_package_manager_path": "npm",
-    "notes": "Git push to both repos:\n- Git push all main\n\nWhen using pytest, make sure you have __init__ functions in the directories set. It helps pytest identify the the target folder.",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "editor.preferences.completion.inline",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for app.tests.test_api.test_validation_returns_summaries.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_custom_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for app.tests.test_validation.test_invalid_run_id_raises_value_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_replay.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_validation.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classify_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.connection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database_access.executor&quot;: &quot;Run&quot;,
+    &quot;Python.drafts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_functions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prepare_dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.process_performance_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.query_test (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.replay_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_validation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_validation_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_classifiers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation_1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validation_test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;current_page&quot;: &quot;1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andrzej Gartman/OneDrive/Desktop/final_year_project/python_code/python_backend/app/models/classification/training_script&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;notes&quot;: &quot;Git push to both repos:\n- Git push all main\n\nWhen using pytest, make sure you have __init__ functions in the directories set. It helps pytest identify the the target folder.&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "page_titles": [
-      "Notes"
+  &quot;keyToStringList&quot;: {
+    &quot;page_titles&quot;: [
+      &quot;Notes&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myDebuggerBackend" value="PYDEVD" />
   </component>
@@ -326,8 +311,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.11879.98" />
-        <option value="bundled-python-sdk-ebb3072d7bdf-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.11879.98" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PY-262.12573.39" />
+        <option value="bundled-python-sdk-3c73f5f83ce7-5c0e4880bfa8-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.12573.39" />
       </set>
     </attachedChunks>
   </component>
@@ -379,6 +364,12 @@
       <workItem from="1793873573201" duration="227000" />
       <workItem from="1793873872226" duration="1557000" />
       <workItem from="1793885072528" duration="14387000" />
+      <workItem from="1793956460409" duration="7660000" />
+      <workItem from="1794059393250" duration="1000" />
+      <workItem from="1794567570618" duration="3696000" />
+      <workItem from="1794842602158" duration="1525000" />
+      <workItem from="1794897888540" duration="4276000" />
+      <workItem from="1794909307929" duration="5129000" />
     </task>
     <servers />
   </component>
@@ -409,7 +400,7 @@
     <SUITE FILE_PATH="coverage/python_backend$validation_1__1_.coverage" NAME="validation_1 (1) Coverage Results" MODIFIED="1791973650257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
     <SUITE FILE_PATH="coverage/python_backend$query_test__1_.coverage" NAME="query_test (1) Coverage Results" MODIFIED="1792063082640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/code_tests" />
     <SUITE FILE_PATH="coverage/python_backend$main_functions.coverage" NAME="main_functions Coverage Results" MODIFIED="1793102471730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/api/routes" />
-    <SUITE FILE_PATH="coverage/python_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1793904680577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/python_backend$main.coverage" NAME="main Coverage Results" MODIFIED="1794898621621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/python_backend$run_validation.coverage" NAME="run_validation Coverage Results" MODIFIED="1792564753462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/validation" />
     <SUITE FILE_PATH="coverage/python_backend$prepare_dataset.coverage" NAME="prepare_dataset Coverage Results" MODIFIED="1792064313228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/ml" />
     <SUITE FILE_PATH="coverage/python_backend$classify_run.coverage" NAME="classify_run Coverage Results" MODIFIED="1793894878384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models/classification" />

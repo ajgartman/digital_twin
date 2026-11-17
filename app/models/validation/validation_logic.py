@@ -196,7 +196,7 @@ def summarize_by_row(data_dict:dict):
 def compare_dataframe(observed_electric:pd.DataFrame,
                        baseline_electric:pd.DataFrame,
                        observed_vibration:pd.DataFrame,
-                       baseline_vibration:pd.DataFrame,):
+                       baseline_vibration:pd.DataFrame):
 
     features = ["mean", "rms", "std", "peak"]
     electric_channels = 6
